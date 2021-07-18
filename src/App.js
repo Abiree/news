@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route,Redirect } from "react-router-dom";
 import "./App.scss";
 import News from "./components/News/News";
+/*
 const Users = () => {
  // state
  const [users, setUsers] = React.useState([]);
@@ -28,10 +29,11 @@ const Users = () => {
    </div>
  );
 };
+*/
 const App = () => (
  <BrowserRouter>
-   <Route path="/" exact component={Users} />
-   <Route path="/news" exact component={News} />
+   <Route path="/" exact component={News} />
+   <Redirect to="/"/>
 
  </BrowserRouter>
 );

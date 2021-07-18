@@ -1,5 +1,5 @@
 
-.navbar{
+.navbarr{
   width: 100%;
   position: fixed;
   top:0%;
@@ -7,8 +7,13 @@
  
   
 }
+
+#root{
+  width: 100%;
+}
 body{
   margin: 0;
+  
 }
 ul {
   
@@ -35,7 +40,15 @@ li a {
 #withhover:hover  {
 
   background-color: #b63729;
+  
 }
+
+#white:hover{
+    color: white;
+    cursor: pointer;
+  }
+
+
 
   body {
     background: #f2f2f2;
@@ -43,7 +56,7 @@ li a {
     font-size: 14px;
   
   }
-  .flx{
+  .flxx{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-auto-rows: minmax(auto);
@@ -170,13 +183,13 @@ li a {
    
     opacity: 1 !important;
   }
-  .container {
+  .containerr {
     margin:0;
 
  
   }
 
-  .container .column {
+  .containerr .column {
     left: 50%;
     padding: 0 25px;
     margin:auto;
@@ -186,41 +199,41 @@ li a {
     box-sizing: border-box;
     float: left;
   }
-  .container .column .demo-title {
+  .containerr .column .demo-title {
    
     color: #666666;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
   }
-  .container .info {
+  .containerr .info {
     display: block;
     justify-content: center;
     
     margin: 20px 0px 50px 0px;
     text-align: center;
   }
-  .container .info h1 {
+  .containerr .info h1 {
     margin: 0 0 15px;
     padding: 0;
     font-size: 24px;
     font-weight: bold;
     color: #333333;
   }
-  .container .info span {
+  .containerr .info span {
     color: #666666;
     font-size: 12px;
   }
-  .container .info span a {
+  .containerr .info span a {
     color: #000000;
     text-decoration: none;
   }
-  .container .info span .fa {
+  .containerr .info span .fa {
     color: #e74c3c;
   }
 
   @media screen and (max-width:1000px) {
-    .flx{
+    .flxx{
      
       grid-template-columns: repeat(2,1fr);
      
@@ -228,7 +241,7 @@ li a {
     }
 }
 @media screen and (max-width:640px) {
-  .flx{
+  .flxx{
    
     grid-template-columns: repeat(1,1fr);
    
