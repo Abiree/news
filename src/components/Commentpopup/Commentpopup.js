@@ -1,10 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import styles from './Commentpopup.scss';
 import { Button, Modal, ModalBody } from 'reactstrap';
-import {Control , LocalForm , Errors} from 'react-redux-form';
+
 import { news } from '../Data/Data';
 const Commentpopup = (props) =>{ 
+
+  const comm = props.comments
+
+  console.log(comm)
+
+  
   
   const {modal,toggle,unmountOnClose} = props;
   const hpStyle = {
@@ -34,9 +40,8 @@ const Commentpopup = (props) =>{
     toggle();
   }
  
-  const datamap = news.length===0 ? <div style={{"color":"white","text-align":"center","font-size":"20px","width":"100%"}}>Their s no news</div>:news.map((element)=>{
-   
- 
+  const datamap = comm.length===0 ? <div style={{"color":"white","text-align":"center","font-size":"20px","width":"100%"}}>Their s no news</div>:Object.values(comm).map((element)=>{
+    
     return(
       <>
       
@@ -48,14 +53,12 @@ const Commentpopup = (props) =>{
             </div>
             <div class="comment-box">
               <div class="comment-head">
-                <h6 class="comment-name">
-                  <a >Lorena Rojero</a>
-                  </h6>
-                  <span>6min ago</span>
+               
+              {element==null? null : <h6 class="comment-name" style={{ "margin-bottom": "0px"}}><a>{element.name}</a></h6>}
+                  <span ><a>6min ago</a></span>
+                 
                 </div>
-              <div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-						</div>
+              {	element==null? null :<div class="comment-content">{element.comment}</div>}
             </div>
           </div>
           

@@ -10,6 +10,7 @@ import Commentpopup from '../Commentpopup/Commentpopup';
 
 const News = (props) => {
   const {location} = props;
+  const [title,setTitle] = useState('');
   const [isOpen , setIsOpen] = useState(false);
   /*----------------------------login---------------------------------*/
   const [loginmodal, setloginModal] = useState(false);
@@ -23,12 +24,19 @@ const News = (props) => {
   /*-------------------------------------------------------------------*/
   const [commentmodal, setcommentModal] = useState(false);
   const [commentunmountOnClose] = useState(false);
-  const toggleCommentModal = () => setcommentModal(!commentmodal);
+  const toggleCommentModal = (ti) => {
+    setcommentModal(!commentmodal);
+    setTitle(ti)
+    console.log(ti)
+  };
+   
 
   /*-------------------------------------------------------------------*/
   const toggle = () => setIsOpen(!isOpen);
   console.log(users)
   const datamap = news.length===0 ? <div style={{"color":"white","text-align":"center","font-size":"20px","width":"100%"}}>Their s no news</div>:news.map((element)=>{
+  
+    //console.log(i)
     return(
       <div class="column">
       <div class="demo-title">{element.city}</div>
@@ -47,7 +55,7 @@ const News = (props) => {
           <h1 class="title">{element.title}</h1>
           <h2 class="sub_title">{element.sub_title}</h2>
           <p class="description">{element.description}</p>
-          <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> {element.time}</span><span class="comments"><i class="fa fa-comments"></i><a id="cursor" onClick={toggleCommentModal}> {element.comments.length}</a></span></div>
+          <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> {element.time}</span><span class="comments"><i class="fa fa-comments"></i><a id="cursor" onClick={()=>toggleCommentModal(element.comments)} > {element.comments.length}</a></span></div>
         </div>
       </div>
     </div>
@@ -69,7 +77,7 @@ return(
  </ul>
  <Login modal={loginmodal} toggle={toggleLoginModal} toggleRegister={toggleRegisterModal} unmountOnClose={loginunmountOnClose} />
  <Register modal={registermodal} toggle={toggleRegisterModal} toggleLogin={toggleLoginModal} unmountOnClose={registerunmountOnClose}  />
- <Commentpopup modal={commentmodal} toggle={toggleCommentModal}  unmountOnClose={commentunmountOnClose} />
+ <Commentpopup modal={commentmodal} toggle={toggleCommentModal}  unmountOnClose={commentunmountOnClose} comments={title}/>
   </div>
   
    <div class="containerr">
