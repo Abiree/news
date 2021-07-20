@@ -11,12 +11,12 @@ export  const news=[{
         {
             "name":"ahmed",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"It's hard to believe this"
         },
         {
             "name":"salma",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"Oh my god"
         },
     
     ]
@@ -35,12 +35,12 @@ export  const news=[{
         {
             "name":"ahmed",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?"
         },
         {
             "name":"salma",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?"
         },
     
     ]
@@ -58,12 +58,12 @@ export  const news=[{
         {
             "name":"ahmed",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?"
         },
         {
             "name":"salma",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?"
         },
     
     ]
@@ -82,12 +82,12 @@ export  const news=[{
         {
             "name":"ahmed",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?"
         },
         {
             "name":"salma",
             "picture":"",
-            "comment":"oh lalaa"
+            "comment":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?"
         },
     
     ]
@@ -97,6 +97,6 @@ export  const news=[{
 
 
 export  const users={
-    "name":"",
+    "name":"Chouaib Eladraoui",
     "email":""
 }

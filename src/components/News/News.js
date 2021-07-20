@@ -4,6 +4,7 @@ import  './News.scss';
 import {news,users} from '../Data/Data';
 import Login from '../Login/Login';
 import Register from '../Login/register';
+import Commentpopup from '../Commentpopup/Commentpopup';
 
 
 
@@ -19,6 +20,11 @@ const News = (props) => {
   const [registerunmountOnClose] = useState(false);
   const toggleRegisterModal = () => setregisterModal(!registermodal);
   
+  /*-------------------------------------------------------------------*/
+  const [commentmodal, setcommentModal] = useState(false);
+  const [commentunmountOnClose] = useState(false);
+  const toggleCommentModal = () => setcommentModal(!commentmodal);
+
   /*-------------------------------------------------------------------*/
   const toggle = () => setIsOpen(!isOpen);
   console.log(users)
@@ -41,7 +47,7 @@ const News = (props) => {
           <h1 class="title">{element.title}</h1>
           <h2 class="sub_title">{element.sub_title}</h2>
           <p class="description">{element.description}</p>
-          <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> {element.time}</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> {element.comments.length}</a></span></div>
+          <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> {element.time}</span><span class="comments"><i class="fa fa-comments"></i><a id="cursor" onClick={toggleCommentModal}> {element.comments.length}</a></span></div>
         </div>
       </div>
     </div>
@@ -53,7 +59,7 @@ const News = (props) => {
 return(
   <>
   <div className="navbarr">
-  <ul>
+  <ul id="pp" style={{"padding-right":"32px"}} >
    <li ><a id="white" href="#news">News</a></li>
    
    <li id="withhover" style={{"float":"right"}}>
@@ -61,8 +67,9 @@ return(
      
        </li>
  </ul>
- <Login modal={loginmodal} toggle={toggleLoginModal} toggleRegister={toggleRegisterModal} unmountOnClose={loginunmountOnClose} Login={props.Login}/>
- <Register modal={registermodal} toggle={toggleRegisterModal} toggleLogin={toggleLoginModal} unmountOnClose={registerunmountOnClose}  IndividuRegister={props.IndividuRegister}  OrganisationRegister={props.OrganisationRegister} />
+ <Login modal={loginmodal} toggle={toggleLoginModal} toggleRegister={toggleRegisterModal} unmountOnClose={loginunmountOnClose} />
+ <Register modal={registermodal} toggle={toggleRegisterModal} toggleLogin={toggleLoginModal} unmountOnClose={registerunmountOnClose}  />
+ <Commentpopup modal={commentmodal} toggle={toggleCommentModal}  unmountOnClose={commentunmountOnClose} />
   </div>
   
    <div class="containerr">
